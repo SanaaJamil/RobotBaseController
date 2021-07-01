@@ -7,5 +7,6 @@ which can move (forward, backward, left, right, and stop).
 first file contain: 1-user interface with name :"index.html." 
 2- The css file :"base.css".
 3- The php file: "base.php" to connect and insert information into table in "RoboticArm "DB.
+4- "retrive.php" to control  hardware and retrive info.
 The other folder contain : 1-the control panel which has to control the base + the arm.
 2- css file to set the page. 
