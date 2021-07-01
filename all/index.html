@@ -1,0 +1,143 @@
+<!-- Sanaa Jamil Dahlawi
+     Umm-Al-Qura university 
+	 +966558922571
+	 snadhlwy@gmail.com 
+	 -->
+ 
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+		<title>Robot Controller</title> <!-- page name-->
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css" media="screen">
+	</head>
+	
+	<body>
+	
+
+	<header id=site-header ></header>
+	<div class="container">
+  <div class="robot-ears">
+    <div class="robot-ear-left"></div>
+    <div class="robot-ear-right"></div>
+  </div>
+  <div class="robot-head">
+    <div class="pulse"></div>
+    <div class="robot-antenna"></div>
+    <div class="robot-face">
+      <div class="robot-eye-left"></div>
+      <div class="robot-eye-right"></div>
+      <svg class="robot-mouth" width="100%" height="100%" viewBox="0 0 170 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"><path d="M10,10c11.985,25.848 41.76,42.886 74.947,42.886c33.188,0 62.962,-17.038 74.947,-42.886c-11.985,25.848 -41.759,42.886 -74.947,42.886c-33.187,0 -62.962,-17.038 -74.947,-42.886Z" style="stroke:#000;stroke-width:20px;"/></svg>
+    </div>
+  </div>
+</div>
+		<div style="display: flex; " class="border">
+	<form  method="post"  style="float:right; margin-right: 300px;" >
+
+
+
+			<!-- arrow settings -->
+		<div style="margin-left: 175px; margin-top: 50px;"> 
+			<button type="submit" value="F" name="forward">
+				<p> <i class="arrow up"></i></p></button>   </div>
+
+	<div style="display:flex;">
+	
+		<div style="display: inline-block; margin-left:60px;"> 
+			<button type="submit" value="L" name="left"> 
+				<p> <i class="arrow left"></i></p></button>   </div>
+
+		<div style="display: inline-block; margin-right: 10px;" >
+			<button type="submit" value="0" name="stop" class="stop"> stop
+				<p> <i class="stop"></i></p></button>   </div> 
+
+		<div style="display: inline-block;"> 
+			<button type="submit" value="R" name="right"> 
+				<p> <i class="arrow right"></i></p></button>   </div>
+	</div>	
+		<div style="margin-left: 175px;" > 
+			<button type="submit" value="B" name="backward"> 
+				<p> <i class="arrow down"></i></p></button>   </div>
+			<!-- arrow settings done -->
+
+
+	</form>
+
+	<form  method="post"  class="slidecontainer" style="float:left; margin-right: 100px;">
+
+		<!-- create a range slider1 -->
+		<div class="slidecontainer"> 
+		<text> <strong> Base: </strong></text>
+		<input type="range" min="0" max="180" value="90" class="slider" name="base"> <label>You chose <span class="limit"></span></label> 
+		</div>
+		
+		<!-- create a range slider2 -->
+		<div class="slidecontainer"> 
+		<text><strong> Shoulder:</strong></text>
+		<input type="range" min="0" max="180" value="90" class="slider" name="shoulder"> <label>You chose <span class="limit"></span></label>
+		</div>
+		
+		<!-- create a range slider3 -->
+		<div class="slidecontainer"> 
+		<text><strong> Elbow:</strong></text>
+		<input type="range" min="0" max="180" value="90" class="slider" name="elbow"> <label>You chose <span class="limit"> </span></label>
+		</div>
+		
+		<!-- create a range slider4 -->
+		
+		<div class="slidecontainer"> 
+		<text><strong> Wrist:</strong></text>
+		<input type="range" min="0" max="180" value="90" class="slider" name="wrist"> <label>You chose <span class="limit"></span></label>
+		</div>
+		
+		<!-- create a range slider5 -->
+		<div class="slidecontainer"> 
+		<text><strong> Gripper:</strong></text>
+		<input type="range" min="0" max="180" value="90" class="slider" name="gripper"> <label>You chose <span class="limit"></span></label>
+		</div>
+		<!-- create a range slider6 -->
+		<div class="slidecontainer"> 
+		<text><strong>motor6:</strong></text>
+		<input type="range" min="0" max="180" value="90" class="slider" name="motor6"> <label>You chose <span class="limit"></span></label>
+		</div>
+		
+		<!-- save and submit button -->
+		<div class="slidecontainer">
+		<input value="save" type="submit" name="save">
+		</div>
+		
+		<div class="slidecontainer">
+		<input value="on" type="submit"  name="on">
+		</div>
+		
+		<div class="slidecontainer">
+		<input value="off" type="submit"  name="off">
+		</div> 
+
+
+	</form> </div>
+
+	
+	<footer id="site-footer"></footer>
+	<!-- java script -->
+		
+	<script>//to change the value acconrding to the slider
+		function updateLabel() { 
+		var limit = this.parentElement.getElementsByClassName("limit")[0];
+		limit.innerHTML = this.value;
+		}
+
+		var slideContainers = document.getElementsByClassName("slidecontainer");
+
+		for (var i = 0; i < slideContainers.length; i++) {
+		var slider = slideContainers[i].getElementsByClassName("slider")[0];
+		updateLabel.call(slider);
+		slider.oninput = updateLabel;
+		}
+	</script>
+		
+
+	</body>
+</html>
